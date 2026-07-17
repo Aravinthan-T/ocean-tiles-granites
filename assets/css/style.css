@@ -61,3 +61,12 @@ img {
 section {
   padding: 80px 0;
 }
+
+/* Fix anchor scrolling with fixed navbar */
+
+#home,
+#brands,
+#products,
+#about {
+  scroll-margin-top: 90px;
+}
