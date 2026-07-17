@@ -1,0 +1,55 @@
+/* Brands Section */
+
+.brand-slider {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+.brand-track {
+  display: flex;
+  width: max-content;
+  animation: scrollBrands 30s linear infinite;
+}
+
+.brand-slider:hover .brand-track {
+  animation-play-state: paused;
+}
+
+.brand-item {
+  width: 220px;
+  height: 120px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  flex-shrink: 0;
+  margin: 0 20px;
+}
+
+.brand-item img {
+  max-width: 180px;
+  max-height: 90px;
+
+  width: auto;
+  height: auto;
+
+  object-fit: contain;
+
+  transition: transform 0.3s ease;
+}
+
+.brand-item img:hover {
+  transform: scale(1.12);
+}
+
+@keyframes scrollBrands {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
