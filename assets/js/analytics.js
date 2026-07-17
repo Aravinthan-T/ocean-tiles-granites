@@ -1,3 +1,3 @@
-import { analytics } from "@vercel/analytics";
+import { inject } from "@vercel/analytics";
 
-analytics();
+inject();
