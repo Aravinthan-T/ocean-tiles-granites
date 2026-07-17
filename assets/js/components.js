@@ -4,5 +4,9 @@ function loadComponent(id, file) {
 
     .then((data) => {
       document.getElementById(id).innerHTML = data;
+
+      if (id === "opening") {
+        initOpeningModal();
+      }
     });
 }

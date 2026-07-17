@@ -1,0 +1,129 @@
+.opening-modal {
+  position: relative;
+
+  overflow: hidden;
+
+  border-radius: 25px;
+
+  border: none;
+
+  background:
+    radial-gradient(circle at top, rgba(212, 175, 55, 0.25), transparent 40%),
+    #ffffff;
+}
+
+.opening-close {
+  position: absolute;
+
+  right: 15px;
+
+  top: 5px;
+
+  z-index: 5;
+
+  border: none;
+
+  background: none;
+
+  font-size: 35px;
+
+  cursor: pointer;
+
+  color: #333;
+}
+
+#modal-fireworks {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 1;
+
+  pointer-events: none;
+}
+
+.opening-modal .modal-body {
+  position: relative;
+
+  z-index: 2;
+
+  padding: 40px 25px;
+}
+
+.opening-logo {
+  width: 130px;
+
+  margin: auto;
+
+  margin-bottom: 20px;
+}
+
+.opening-modal h1 {
+  font-family: var(--font-heading);
+
+  color: #c9a227;
+
+  font-size: 40px;
+}
+
+.opening-modal h2 {
+  color: #1f2937;
+
+  font-weight: 700;
+}
+
+.opening-date {
+  font-weight: 600;
+}
+
+#countdown {
+  display: flex;
+
+  justify-content: center;
+
+  gap: 12px;
+
+  margin-top: 25px;
+}
+
+#countdown div {
+  background: #1f2937;
+
+  color: white;
+
+  padding: 12px;
+
+  border-radius: 15px;
+
+  min-width: 70px;
+}
+
+#countdown span {
+  display: block;
+
+  font-size: 25px;
+
+  font-weight: 700;
+}
+
+#countdown small {
+  font-size: 12px;
+}
+
+.celebrate-timer {
+  animation: timerPulse 1s infinite;
+}
+
+@keyframes timerPulse {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.08);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
