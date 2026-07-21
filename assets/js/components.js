@@ -1,12 +1,15 @@
 function loadComponent(id, file) {
-  fetch(file)
-    .then((response) => response.text())
-
+  return fetch(file)
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`Failed to load ${file}: ${response.status}`);
+      }
+      return response.text();
+    })
     .then((data) => {
       document.getElementById(id).innerHTML = data;
-
-      if (id === "opening") {
-        initOpeningModal();
-      }
+    })
+    .catch((error) => {
+      console.error("Error loading component:", error);
     });
 }

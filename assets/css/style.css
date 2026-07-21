@@ -17,6 +17,7 @@
 
   /* Effects */
   --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  --navbar-height: 70px;
 
   --transition: all 0.3s ease;
 }
@@ -37,6 +38,7 @@ body {
   font-family: var(--font-primary);
   color: var(--text);
   background: var(--white);
+  padding-top: var(--navbar-height);
 }
 
 h1,
@@ -58,15 +60,17 @@ img {
   display: block;
 }
 
-section {
-  padding: 80px 0;
-}
-
 /* Fix anchor scrolling with fixed navbar */
-
 #home,
 #brands,
 #products,
+#faq,
 #about {
-  scroll-margin-top: 90px;
+  scroll-margin-top: var(--navbar-height);
+}
+
+@media (max-width: 991px) {
+  :root {
+    --navbar-height: 70px; /* mobile navbar renders shorter */
+  }
 }

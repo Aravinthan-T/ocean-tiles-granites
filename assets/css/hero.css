@@ -1,0 +1,258 @@
+/* =========================================
+        HERO SECTION
+========================================= */
+
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: calc(
+    100dvh - var(--navbar-height)
+  ); /* fills exactly what's left below navbar — no gap, no overflow */
+  min-height: 550px;
+  max-height: 850px; /* prevents an oddly stretched hero on ultra-wide/4K monitors */
+  overflow: hidden;
+  padding: 0;
+}
+
+/* Slider */
+.hero-slider {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* Slides */
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1;
+  transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hero-slide.active {
+  opacity: 1;
+  visibility: visible;
+  z-index: 1;
+}
+
+/* Images + Ken Burns */
+.hero-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.08);
+  transition: transform 6s ease-out;
+}
+
+.hero-slide.active img {
+  transform: scale(1.18);
+}
+
+/* =========================================
+        OVERLAY
+========================================= */
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background:
+    radial-gradient(
+      ellipse at center,
+      rgba(0, 0, 0, 0.35) 0%,
+      rgba(0, 0, 0, 0.8) 100%
+    ),
+    linear-gradient(135deg, rgba(17, 24, 39, 0.88), rgba(201, 162, 39, 0.18));
+}
+
+/* =========================================
+        CONTENT
+========================================= */
+
+.hero-content {
+  position: absolute;
+  z-index: 3;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 800px;
+  padding: 0 20px;
+  text-align: center;
+  color: white;
+}
+
+.hero-tag {
+  display: inline-block;
+  margin-bottom: 20px;
+  padding: 8px 20px;
+  border-radius: 50px;
+  background: rgba(212, 175, 55, 0.15);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  backdrop-filter: blur(10px);
+  font-size: 13px;
+  letter-spacing: 2px;
+  font-weight: 500;
+}
+
+.hero-content h1 {
+  font-size: 64px;
+  line-height: 1.15;
+  font-weight: 600;
+  letter-spacing: -1px;
+  margin-bottom: 25px;
+  color: white; /* overrides global h1 color: var(--black) inside hero */
+}
+
+.hero-content p {
+  font-size: 20px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 40px;
+}
+
+/* =========================================
+        BUTTONS
+========================================= */
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.hero-btn {
+  padding: 15px 35px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  transition: 0.35s ease;
+}
+
+.hero-btn.primary {
+  background: #ffffff;
+  color: var(--primary);
+}
+
+.hero-btn.primary:hover {
+  transform: translateY(-4px);
+  background: var(--secondary);
+  color: white;
+}
+
+.hero-btn.secondary {
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  color: white;
+}
+
+.hero-btn.secondary:hover {
+  background: white;
+  color: var(--primary);
+}
+
+/* =========================================
+        LINE INDICATORS
+========================================= */
+
+.hero-indicators {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 4;
+  display: flex;
+  gap: 10px;
+}
+
+.hero-indicator {
+  width: 36px;
+  height: 3px;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.35);
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+}
+
+.hero-indicator::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 0%;
+  background: var(--accent);
+  border-radius: 2px;
+}
+
+.hero-indicator.active::after {
+  animation: fillIndicator 2.8s linear forwards;
+}
+
+@keyframes fillIndicator {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* =========================================
+        RESPONSIVE
+========================================= */
+
+@media (max-width: 992px) {
+  .hero-content h1 {
+    font-size: 48px;
+  }
+
+  .hero-content p {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    height: calc(100dvh - var(--navbar-height));
+    min-height: 500px;
+  }
+
+  .hero-content h1 {
+    font-size: 36px;
+  }
+
+  .hero-content p {
+    font-size: 16px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-btn {
+    width: 220px;
+  }
+
+  .hero-indicators {
+    bottom: 25px;
+  }
+
+  .hero-indicator {
+    width: 26px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 30px;
+  }
+
+  .hero-tag {
+    font-size: 11px;
+  }
+}

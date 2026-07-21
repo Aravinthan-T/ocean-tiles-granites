@@ -1,0 +1,301 @@
+/* ================================
+   FAQ - Ocean Tiles and Granites
+   ================================ */
+
+.faq-section {
+  padding: 40px 0;
+  background: #f8f9fa;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.section-title h2 {
+  font-size: 36px;
+  font-weight: 600;
+  color: #222;
+}
+
+.section-title p {
+  margin-top: 10px;
+  color: #666;
+}
+
+/* ================================
+   Grid
+   ================================ */
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+  align-items: start;
+}
+
+/* ================================
+   Card
+   ================================ */
+.faq-card {
+  position: relative;
+  overflow: hidden;
+
+  background: #ffffff;
+  border: 1px solid #ececec;
+  border-radius: 20px;
+
+  cursor: pointer;
+
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards;
+
+  transition:
+    background 0.4s ease,
+    border-color 0.4s ease,
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+/* Stagger entrance */
+.faq-card:nth-child(1) {
+  animation-delay: 0.05s;
+}
+.faq-card:nth-child(2) {
+  animation-delay: 0.1s;
+}
+.faq-card:nth-child(3) {
+  animation-delay: 0.15s;
+}
+.faq-card:nth-child(4) {
+  animation-delay: 0.2s;
+}
+.faq-card:nth-child(5) {
+  animation-delay: 0.25s;
+}
+.faq-card:nth-child(6) {
+  animation-delay: 0.3s;
+}
+.faq-card:nth-child(7) {
+  animation-delay: 0.35s;
+}
+.faq-card:nth-child(8) {
+  animation-delay: 0.4s;
+}
+.faq-card:nth-child(9) {
+  animation-delay: 0.45s;
+}
+
+/* Expanded */
+.faq-card.active {
+  grid-column: 1 / -1;
+  background: #0d1b33;
+  border-color: #0d1b33;
+  transform: none;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+}
+
+/* ================================
+   Background Image (real element)
+   Shown ONLY while .active — no hover
+   ================================ */
+.faq-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  filter: brightness(0.4);
+  transition: opacity 0.35s ease;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.faq-card.active .faq-bg {
+  opacity: 1;
+  filter: brightness(0.28);
+}
+
+/* Blue tint overlay on top of image */
+.faq-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(13, 110, 253, 0.75),
+    rgba(0, 0, 0, 0.55)
+  );
+}
+
+/* ================================
+   Content
+   ================================ */
+.faq-content {
+  position: relative;
+  z-index: 1;
+
+  padding: 26px;
+
+  display: flex;
+  flex-direction: column;
+  min-height: 150px;
+}
+
+.faq-card.active .faq-content {
+  min-height: unset;
+  padding: 34px 30px;
+}
+
+/* Number */
+.faq-number {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: #bbb;
+  margin-bottom: 14px;
+  transition: color 0.35s ease;
+}
+
+.faq-card.active .faq-number {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/* Question */
+.faq-question {
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #222;
+  padding-right: 44px;
+  transition: color 0.35s ease;
+}
+
+.faq-card.active .faq-question {
+  color: #fff;
+  font-size: 19px;
+}
+
+/* ================================
+   Expand Button
+   ================================ */
+.faq-expand-btn {
+  position: absolute;
+  top: 22px;
+  right: 22px;
+
+  width: 40px;
+  height: 40px;
+
+  border-radius: 50%;
+  border: none;
+  background: #fff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #111;
+  font-size: 16px;
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+
+  z-index: 2;
+
+  transition:
+    background 0.35s ease,
+    color 0.35s ease,
+    transform 0.4s ease;
+}
+
+.faq-card.active .faq-expand-btn {
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  transform: rotate(90deg);
+}
+
+/* Hover — arrow only, desktop only, collapsed cards only */
+@media (hover: hover) and (pointer: fine) {
+  .faq-card:not(.active):hover .faq-expand-btn {
+    background: #0d6efd;
+    color: #fff;
+    transform: rotate(45deg);
+  }
+}
+
+/* ================================
+   Answer
+   ================================ */
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.faq-card.active .faq-answer {
+  max-height: 600px;
+  margin-top: 20px;
+}
+
+.faq-answer p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.7);
+
+  opacity: 0;
+  transform: translateY(10px);
+  transition:
+    opacity 0.4s ease 0.2s,
+    transform 0.4s ease 0.2s;
+}
+
+.faq-card.active .faq-answer p {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ================================
+   Animation
+   ================================ */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================================
+   Responsive
+   ================================ */
+@media (max-width: 992px) {
+  .faq-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .faq-card.active {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 768px) {
+  .faq-grid {
+    grid-template-columns: 1fr;
+  }
+  .faq-card,
+  .faq-card.active {
+    grid-column: auto;
+  }
+  .faq-content {
+    padding: 22px;
+  }
+  .faq-question {
+    font-size: 16px;
+  }
+  .faq-expand-btn {
+    width: 36px;
+    height: 36px;
+  }
+}
