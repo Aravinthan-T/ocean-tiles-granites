@@ -13,6 +13,12 @@
     />
 
     <!-- Fonts -->
+    <link
+      rel="preload"
+      as="image"
+      href="assets/images/hero/showroom.JPG"
+      fetchpriority="high"
+    />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
 
@@ -125,6 +131,7 @@
       ]).then(() => {
         if (typeof initHeroSlider === "function") initHeroSlider();
         if (typeof initNavbarScrollspy === "function") initNavbarScrollspy();
+        if (typeof initNavbarAutoClose === "function") initNavbarAutoClose();
         if (typeof renderFaq === "function") renderFaq();
       });
     </script>

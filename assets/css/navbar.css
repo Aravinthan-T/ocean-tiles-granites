@@ -107,3 +107,73 @@
     width: 60px;
   }
 }
+
+/* ================================
+   Fries-Style Hamburger (no background)
+   ================================ */
+.custom-toggler {
+  width: 46px;
+  height: 46px;
+
+  border-radius: 0;
+  border: none;
+  background: transparent;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 6px;
+
+  padding: 0;
+  box-shadow: none;
+}
+
+.custom-toggler:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.toggler-line {
+  display: block;
+  height: 4px;
+  background: #111;
+  border-radius: 4px;
+
+  transition:
+    transform 0.35s ease,
+    opacity 0.25s ease,
+    width 0.3s ease,
+    background 0.3s ease;
+}
+
+/* Outer lines longer, center shorter */
+.toggler-line.line-1 {
+  width: 22px;
+}
+
+.toggler-line.line-2 {
+  width: 29px;
+}
+
+.toggler-line.line-3 {
+  width: 16px;
+}
+
+/* Open state — lines turn blue and morph to X, no button bg change needed */
+.custom-toggler[aria-expanded="true"] .toggler-line {
+  width: 22px;
+  background: #111;
+}
+
+.custom-toggler[aria-expanded="true"] .line-1 {
+  transform: translateY(10px) rotate(45deg);
+}
+
+.custom-toggler[aria-expanded="true"] .line-2 {
+  opacity: 0;
+}
+
+.custom-toggler[aria-expanded="true"] .line-3 {
+  transform: translateY(-10px) rotate(-45deg);
+}
