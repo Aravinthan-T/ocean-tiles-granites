@@ -49,6 +49,8 @@
 
     <link rel="stylesheet" href="assets/css/navbar.css" />
 
+    <link rel="stylesheet" href="assets/css/products.css" />
+
     <link rel="stylesheet" href="assets/css/hero.css" />
 
     <link rel="stylesheet" href="assets/css/brands.css" />
@@ -109,6 +111,9 @@
 
     <!-- FAQ -->
 
+    <script src="assets/js/products.js"></script>
+    <script src="assets/js/productSlider.js"></script>
+
     <script src="assets/js/faqData.js"></script>
 
     <script src="assets/js/faq.js"></script>
@@ -133,6 +138,9 @@
         if (typeof initNavbarScrollspy === "function") initNavbarScrollspy();
         if (typeof initNavbarAutoClose === "function") initNavbarAutoClose();
         if (typeof renderFaq === "function") renderFaq();
+        if (typeof initProductTabs === "function") initProductTabs();
+        if (typeof initProductImageSliders === "function")
+          initProductImageSliders();
       });
     </script>
   </body>

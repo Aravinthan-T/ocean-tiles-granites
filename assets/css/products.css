@@ -1,0 +1,396 @@
+/* =========================================
+        PRODUCTS SECTION
+========================================= */
+
+.products-section {
+  background: var(--light);
+}
+
+.section-header {
+  max-width: 640px;
+  margin: 0 auto 50px;
+}
+
+.section-tag {
+  display: inline-block;
+  margin-bottom: 14px;
+  padding: 6px 18px;
+  border-radius: 50px;
+  background: rgba(201, 162, 39, 0.1);
+  border: 1px solid rgba(201, 162, 39, 0.25);
+  color: var(--secondary);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+.section-header h2 {
+  font-size: 40px;
+  margin-bottom: 16px;
+  color: var(--black);
+}
+
+.section-subtitle {
+  color: var(--text);
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* =========================================
+        TAB PILLS
+========================================= */
+
+.product-tabs {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-bottom: 60px;
+}
+
+.product-tab {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  border: 1px solid var(--border);
+  border-radius: 50px;
+  background: var(--white);
+  color: var(--text);
+  font-family: var(--font-primary);
+  font-size: 14.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.product-tab i {
+  font-size: 16px;
+  color: var(--secondary);
+  transition: var(--transition);
+}
+
+.product-tab:hover {
+  border-color: rgba(201, 162, 39, 0.4);
+  color: var(--black);
+}
+
+.product-tab.active {
+  background: var(--secondary);
+  border-color: var(--secondary);
+  color: var(--white);
+}
+
+.product-tab.active i {
+  color: var(--white);
+}
+
+/* =========================================
+        PANELS
+========================================= */
+
+.product-showcase {
+  position: relative;
+  min-height: 420px;
+}
+
+.product-panel {
+  display: none;
+  animation: panelFadeIn 0.5s ease forwards;
+}
+
+.product-panel.active {
+  display: block;
+}
+
+@keyframes panelFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.panel-label {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: var(--secondary);
+  margin-bottom: 14px;
+  text-transform: uppercase;
+}
+
+.product-panel h3 {
+  font-size: 32px;
+  margin-bottom: 18px;
+  color: var(--black);
+}
+
+.product-panel p {
+  font-size: 15.5px;
+  line-height: 1.8;
+  color: var(--text);
+  margin-bottom: 24px;
+}
+
+.panel-features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.panel-features li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14.5px;
+  color: var(--black);
+  font-weight: 500;
+  margin-bottom: 14px;
+}
+
+.panel-features i {
+  color: var(--secondary);
+  font-size: 15px;
+  flex-shrink: 0;
+}
+
+/* Image side */
+.panel-image {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(17, 24, 39, 0.15);
+  height: 420px;
+}
+
+.panel-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(17, 24, 39, 0) 60%,
+    rgba(17, 24, 39, 0.25) 100%
+  );
+  pointer-events: none;
+}
+
+.panel-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s ease;
+}
+
+.panel-image:hover img {
+  transform: scale(1.1);
+}
+
+/* =========================================
+        RESPONSIVE
+========================================= */
+
+@media (max-width: 992px) {
+  .product-panel h3 {
+    font-size: 26px;
+  }
+
+  .panel-image {
+    height: 340px;
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .products-section {
+    padding: 70px 0;
+  }
+
+  .section-header h2 {
+    font-size: 30px;
+  }
+
+  .product-tabs {
+    position: sticky;
+    top: var(--navbar-height); /* sits right below your fixed navbar */
+    z-index: 50;
+    padding: 14px 0 16px;
+    margin-bottom: 30px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .product-tab {
+    padding: 12px 16px;
+    font-size: 13px;
+    justify-content: center;
+  }
+
+  .product-tab span {
+    display: inline;
+  }
+
+  .panel-image {
+    height: 260px;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-tab {
+    padding: 10px 14px;
+  }
+
+  .product-tab i {
+    font-size: 14px;
+  }
+}
+
+/* =========================================
+        PANEL IMAGE SLIDER
+========================================= */
+
+.panel-image {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(17, 24, 39, 0.15);
+  height: 420px;
+}
+
+.panel-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: linear-gradient(
+    180deg,
+    rgba(17, 24, 39, 0) 60%,
+    rgba(17, 24, 39, 0.25) 100%
+  );
+  pointer-events: none;
+}
+
+.panel-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.8s ease;
+}
+
+.panel-slide.active {
+  opacity: 1;
+  visibility: visible;
+  z-index: 1;
+}
+
+.panel-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s ease;
+}
+
+.panel-image:hover .panel-slide.active img {
+  transform: scale(1.1);
+}
+
+/* Dots */
+.panel-dots {
+  position: absolute;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  display: flex;
+  gap: 8px;
+}
+
+.panel-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.panel-dot.active {
+  background: var(--white);
+  transform: scale(1.3);
+}
+
+/* Hide dots wrapper entirely when only 1 slide exists (JS adds this class) */
+.panel-image.single-slide .panel-dots {
+  display: none;
+}
+
+/* =========================================
+        PANEL NAV ARROWS
+========================================= */
+
+.panel-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+  width: 42px;
+  height: 42px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.85);
+  color: var(--black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition);
+  backdrop-filter: blur(4px);
+}
+
+.panel-nav:hover {
+  background: var(--secondary);
+  color: var(--white);
+}
+
+.panel-nav i {
+  font-size: 18px;
+}
+
+.panel-prev {
+  left: 16px;
+}
+
+.panel-next {
+  right: 16px;
+}
+
+/* Hide arrows entirely when only 1 slide exists (JS adds this) */
+.panel-image.single-slide .panel-nav {
+  display: none;
+}
+
+@media (max-width: 576px) {
+  .panel-nav {
+    width: 36px;
+    height: 36px;
+  }
+
+  .panel-nav i {
+    font-size: 15px;
+  }
+
+  .panel-prev {
+    left: 10px;
+  }
+
+  .panel-next {
+    right: 10px;
+  }
+}

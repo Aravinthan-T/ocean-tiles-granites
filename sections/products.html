@@ -1,40 +1,247 @@
-<section id="products" class="py-5 bg-light">
+<section id="products" class="products-section">
   <div class="container">
-    <h2 class="text-center mb-5">Our Products</h2>
+    <div class="section-header text-center">
+      <span class="section-tag">WHAT WE OFFER</span>
+      <h2>Our Product Range</h2>
+      <p class="section-subtitle">
+        Curated collections for every corner of your home, backed by quality you
+        can trust.
+      </p>
+    </div>
 
-    <div class="row">
-      <div class="col-md-4">
-        <div class="card shadow-sm">
-          <img src="assets/images/products/tiles.jpg" class="card-img-top" />
+    <div class="product-tabs">
+      <button class="product-tab active" data-tab="tiles">
+        <i class="bi bi-grid-3x3-gap-fill"></i>
+        <span>Tiles</span>
+      </button>
+      <button class="product-tab" data-tab="granite">
+        <i class="bi bi-hexagon-fill"></i>
+        <span>Granite</span>
+      </button>
+      <button class="product-tab" data-tab="ceramic">
+        <i class="bi bi-droplet-fill"></i>
+        <span>Ceramic</span>
+      </button>
+      <button class="product-tab" data-tab="kitchen">
+        <i class="bi bi-house-gear-fill"></i>
+        <span>Kitchen</span>
+      </button>
+    </div>
 
-          <div class="card-body">
-            <h5>Tiles</h5>
+    <div class="product-showcase">
+      <!-- TILES -->
+      <div class="product-panel active" data-panel="tiles">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-5">
+            <span class="panel-label">01 — Tiles</span>
+            <h3>Premium Floor & Wall Tiles</h3>
+            <p>
+              A refined selection of floor and wall tiles crafted for durability
+              and elegance. From matte finishes to high-gloss glazes, our tile
+              range suits every room — living spaces, kitchens, and bathrooms
+              alike.
+            </p>
+            <ul class="panel-features">
+              <li>
+                <i class="bi bi-check-circle-fill"></i> Anti-skid &
+                water-resistant finishes
+              </li>
+              <li>
+                <i class="bi bi-check-circle-fill"></i> Wide range of sizes &
+                textures
+              </li>
+              <li>
+                <i class="bi bi-check-circle-fill"></i> Suitable for indoor &
+                outdoor use
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-7">
+            <div class="panel-image">
+              <div class="panel-slide active">
+                <img
+                  src="assets/images/products/tiles/tiles01.JPG"
+                  alt="Tiles 1"
+                />
+              </div>
+              <div class="panel-slide">
+                <img
+                  src="assets/images/products/tiles/tiles02.JPG"
+                  alt="Tiles 2"
+                />
+              </div>
 
-            <p>Premium floor and wall tiles.</p>
+              <button class="panel-nav panel-prev" aria-label="Previous image">
+                <i class="bi bi-chevron-left"></i>
+              </button>
+              <button class="panel-nav panel-next" aria-label="Next image">
+                <i class="bi bi-chevron-right"></i>
+              </button>
+            </div>
           </div>
         </div>
       </div>
 
-      <div class="col-md-4">
-        <div class="card shadow-sm">
-          <img src="assets/images/products/granite.jpg" class="card-img-top" />
+      <!-- GRANITE -->
+      <div class="product-panel" data-panel="granite">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-5">
+            <span class="panel-label">02 — Granite</span>
+            <h3>Natural Granite Collections</h3>
+            <p>
+              Timeless granite slabs sourced for their natural beauty and
+              strength. Perfect for countertops, flooring, and cladding that
+              need to make a lasting impression.
+            </p>
+            <ul class="panel-features">
+              <li>
+                <i class="bi bi-check-circle-fill"></i> Scratch & heat resistant
+              </li>
+              <li>
+                <i class="bi bi-check-circle-fill"></i> Unique natural patterns
+              </li>
+              <li>
+                <i class="bi bi-check-circle-fill"></i> Polished & honed finish
+                options
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-7">
+            <div class="panel-image">
+              <div class="panel-slide active">
+                <img
+                  src="assets/images/products/granite/granite01.JPG"
+                  alt="Granite 1"
+                />
+              </div>
+              <div class="panel-slide">
+                <img
+                  src="assets/images/products/granite/granite02.JPG"
+                  alt="Granite 2"
+                />
+              </div>
 
-          <div class="card-body">
-            <h5>Granites</h5>
-
-            <p>Beautiful granite collections.</p>
+              <button class="panel-nav panel-prev" aria-label="Previous image">
+                <i class="bi bi-chevron-left"></i>
+              </button>
+              <button class="panel-nav panel-next" aria-label="Next image">
+                <i class="bi bi-chevron-right"></i>
+              </button>
+            </div>
           </div>
         </div>
       </div>
 
-      <div class="col-md-4">
-        <div class="card shadow-sm">
-          <img src="assets/images/products/kitchen.jpg" class="card-img-top" />
+      <!-- CERAMIC -->
+      <div class="product-panel" data-panel="ceramic">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-5">
+            <span class="panel-label">03 — Ceramic</span>
+            <h3>Sanitaryware & Ceramic Fittings</h3>
+            <p>
+              Elegant ceramic sanitaryware and CP fittings designed for modern
+              bathrooms — combining functionality with a clean, sophisticated
+              look.
+            </p>
+            <ul class="panel-features">
+              <li>
+                <i class="bi bi-check-circle-fill"></i> Stain & odor resistant
+                glaze
+              </li>
+              <li>
+                <i class="bi bi-check-circle-fill"></i> Water-efficient designs
+              </li>
+              <li>
+                <i class="bi bi-check-circle-fill"></i> Wide fixture & fitting
+                range
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-7">
+            <div class="panel-image">
+              <div class="panel-slide active">
+                <img
+                  src="assets/images/products/ceramic/ceramic01.JPG"
+                  alt="Ceramic 1"
+                />
+              </div>
+              <div class="panel-slide">
+                <img
+                  src="assets/images/products/ceramic/ceramic02.JPG"
+                  alt="Ceramic 2"
+                />
+              </div>
+              <div class="panel-slide">
+                <img
+                  src="assets/images/products/ceramic/ceramic03.JPG"
+                  alt="Ceramic 3"
+                />
+              </div>
+              <div class="panel-slide">
+                <img
+                  src="assets/images/products/ceramic/ceramic04.JPG"
+                  alt="Ceramic 4"
+                />
+              </div>
 
-          <div class="card-body">
-            <h5>Modular Kitchen</h5>
+              <button class="panel-nav panel-prev" aria-label="Previous image">
+                <i class="bi bi-chevron-left"></i>
+              </button>
+              <button class="panel-nav panel-next" aria-label="Next image">
+                <i class="bi bi-chevron-right"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
 
-            <p>Modern kitchen designs.</p>
+      <!-- KITCHEN -->
+      <div class="product-panel" data-panel="kitchen">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-5">
+            <span class="panel-label">04 — Kitchen</span>
+            <h3>Modular Kitchen Solutions</h3>
+            <p>
+              Thoughtfully designed modular kitchens that maximize space without
+              compromising on style — tailored to fit your home and your
+              workflow.
+            </p>
+            <ul class="panel-features">
+              <li>
+                <i class="bi bi-check-circle-fill"></i> Space-optimized layouts
+              </li>
+              <li>
+                <i class="bi bi-check-circle-fill"></i> Durable, easy-to-clean
+                surfaces
+              </li>
+              <li>
+                <i class="bi bi-check-circle-fill"></i> Custom design
+                consultation
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-7">
+            <div class="panel-image">
+              <div class="panel-slide active">
+                <img
+                  src="assets/images/products/kitchen/kitchen02.JPG"
+                  alt="Kitchen 1"
+                />
+              </div>
+              <div class="panel-slide">
+                <img
+                  src="assets/images/products/kitchen/kitchen01.JPG"
+                  alt="Kitchen 2"
+                />
+              </div>
+
+              <button class="panel-nav panel-prev" aria-label="Previous image">
+                <i class="bi bi-chevron-left"></i>
+              </button>
+              <button class="panel-nav panel-next" aria-label="Next image">
+                <i class="bi bi-chevron-right"></i>
+              </button>
+            </div>
           </div>
         </div>
       </div>
